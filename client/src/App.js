@@ -1,4 +1,4 @@
-//import { Layout } from './components/Layout.jsx'
+import { Layout } from './components/Layout.jsx'
 import { Routes, Route } from 'react-router-dom'
 
 import { MainPage } from './pages/MainPage';
@@ -14,7 +14,7 @@ import { EditPostPage } from './pages/EditPostPage.jsx';
 
 function App() {
   return (
-  //  <Layout> 
+    <Layout> 
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='posts' element={<PostsPage />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path='login' element={<LoginPage />} />
 
       </Routes>
- //   </Layout>
+    </Layout>
   )
 }
 
