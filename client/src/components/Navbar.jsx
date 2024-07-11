@@ -3,9 +3,10 @@ import { Link, NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
 
+const isAuth = false
+
 const activeStyles = {
     color: 'white',
-
 }
 
   return (
@@ -14,7 +15,9 @@ const activeStyles = {
             E
         </span>
 
-        <ul className='flex gap-8'>
+        {
+            isAuth && (
+                <ul className='flex gap-8'>
             <li>
                 <NavLink
                     to={'/'}
@@ -46,9 +49,11 @@ const activeStyles = {
                 >Добавить пост</NavLink>
             </li>
         </ul>
+        )
+        }
 
         <div className='flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm px-4 py-2'>
-            <button>Войти</button>
+            {isAuth ? <button>Выйти</button> : <Link to={'/login'}> Войти </Link> }
         </div>
     </div>
   )
