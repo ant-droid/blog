@@ -36,6 +36,7 @@ export const authSlice = createSlice({
         builder
         .addCase(registerUser.pending, (state) => {
             state.isLoading = true
+            state.status = null
         })
         .addCase(registerUser.fulfilled, (state, action) => {
             state.isLoading = false
